@@ -31,10 +31,7 @@ app.get('/download', function(req,res){
     });
     getContent(req.query.url, function(content){
       fs.readFile(__dirname +'/'+ content, function(err, data){
-        
-        //console.log(__dirname +'/rendermulti-3.pdf');
         res.end(data, 'binary');
-      
       });
       
     });
