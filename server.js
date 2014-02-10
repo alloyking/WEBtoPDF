@@ -9,7 +9,10 @@ app.use(express.static(__dirname + '/'));
 var getContent = function (url, callback) {
     var d = new Date();
     var pngImag;
+    //geerate random file name
     var fname = d.getMilliseconds() + '-' + Math.floor(Math.random() * (9999 - 10 + 1) + 10);
+    
+    //pass params to child phantonjs process
     var phantom = require('child_process').spawn('phantomjs', ['phantom-server.js', fname, url, LOCAL + '/' + fname + '.png']);
     phantom.on('exit', function () {
         callback(fname);

@@ -23,7 +23,6 @@ RenderUrlsToFile = function(urls,fname, callbackPerUrl, callbackFinal) {
         } else{
             return fileName + ".png";
         }
-        
     };
     next = function(status, url, file) {
         page.close();
@@ -67,7 +66,7 @@ arrayOfUrls = null;
 if (system.args.length > 1) {
     arrayOfUrls = Array.prototype.slice.call(system.args, 2);
 } else {
-    console.log("Usage: phantomjs phantom-server.js [domain.name1, domain.name2, ...]");
+    console.log("Usage: phantomjs phantom-server.js filename [domain.name1, domain.name2, ...]");
     arrayOfUrls = ["www.google.com", "www.bbc.co.uk", "www.phantomjs.org"];
 }
 
