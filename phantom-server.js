@@ -50,7 +50,7 @@ RenderUrlsToFile = function(urls,fname, callbackPerUrl, callbackFinal) {
                     return window.setTimeout((function() {
                         page.render(file);
                         return next(status, url, file);
-                    }), 1000);
+                    }), 1000);// delay to allow page/animation load
                 } else {
                     return next(status, url, file);
                 }
